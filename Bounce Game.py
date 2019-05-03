@@ -7,11 +7,12 @@ root=Tk()
 root.resizable(0,0)
 root.title("Bounce!")
 canvas=Canvas(root,height=500, width=500,bd=0,highlightthickness=0,bg="#ffeaee")
-l=Label(root,text="Score: ",bg="black",fg="white").pack(fill=X)
+l=Label(root,text="Score: ",font=("Arial",12,"bold"),bg="black",fg="white")
+l.pack(fill=X)
 canvas.pack()
 root.update()
 score=0
-def update(score):                        # not configuring the score 
+def update(score):
        l.configure(text="Score: "+str(score))
 class Ball:
        score=0
@@ -34,7 +35,7 @@ class Ball:
               if pos[2]>=paddle_pos[0] and pos[0]<=paddle_pos[2]:
                      if pos[3]>=paddle_pos[1] and pos[3]<=paddle_pos[3]:
                             score+=1
-                            update(score) # Here is the trouble
+                            update(score)
                             return True
               return False
                             
@@ -43,20 +44,20 @@ class Ball:
               pos=self.canvas.coords(self.id)
               # this will give us [x1,y1,x2,y2]
               if pos[0]<=0:
-                     self.x=3
+                     self.x=4
               if pos[1]<=0:
-                     self.y=3
+                     self.y=4
               if pos[2]>=self.canvas_width:
-                     self.x=-3
+                     self.x=-4
               if pos[3]>=self.canvas_height:
                      self.hit_bottom=True
-                     canvas.create_text(245,100, text="Game Over")
+                     canvas.create_text(245,100,font=("Arial",15,"bold"),text="Game Over")
               if self.hit_paddle(pos)==True:
-                     self.y=-3
+                     self.y=-4
 class Paddle:
        
        def rightbutt(self,event):
-              self.x=2
+              self.x=4
               
        def __init__(self,canvas,color):
               self.canvas=canvas
@@ -68,7 +69,7 @@ class Paddle:
               self.canvas.bind_all("<Right>",self.rightbutt)
 
        def leftbutt(self,event):
-              self.x=-2
+              self.x=-4
 
        def draw(self):
               self.canvas.move(self.id,self.x,0)
@@ -88,7 +89,8 @@ while 1:
               break
        root.update_idletasks()
        root.update()
-       time.sleep(0.01)
+       time.sleep(0.013)
 
-messagebox.showinfo("Score",score)
+s="Your Score is "+str(score)
+messagebox.showinfo("Score",s)
        
