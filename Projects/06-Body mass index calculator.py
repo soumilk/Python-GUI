@@ -4,17 +4,20 @@ class App(Tk):
     def __init__(self):
         Tk.__init__(self)
 
-        self.inputH = Label(self, text="Height: (M)")
-        self.inputH.grid(row=0, column=0)
+        self.head = Label(self, text="Body Mass Index (BMI)")
+        self.head.grid(row=0, columnspan=2)
 
-        self.inputW = Label(self, text="Weight: (KG)")
-        self.inputW.grid(row=1, column=0)
+        self.inputH = Label(self, text="Height: (Centimeter)")
+        self.inputH.grid(row=1, column=0)
+
+        self.inputW = Label(self, text="Weight: (Kilogram)")
+        self.inputW.grid(row=2, column=0)
 
         self.inputW = Entry(self)
-        self.inputW.grid(row=1, column=1)
+        self.inputW.grid(row=2, column=1)
 
         self.inputH = Entry(self)
-        self.inputH.grid(row=0, column=1)
+        self.inputH.grid(row=1, column=1)
 
         self.button = Button(self, text="Calculate", command=self.calc)
         self.button.grid(row=4, columnspan=2)
