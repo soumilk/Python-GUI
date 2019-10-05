@@ -1,1 +1,11 @@
-# Tkinter_and_Python_Game
+## Python-GUI
+
+* Python3 has a cool set of libraries which can be used to develop a good looking GUI application. Libraries like Tkinter, pygame, PyQt provide wide range of features to implement a decent interface to your application. 
+
+This repository is all about the Python GUI and its implementations, It contains the explanation and working of the components of GUI libraries as well as projects related to them.
+
+Visit this link to learn all the basic required elements of Tkinter library to make a application with interface [Basics of Tkinter](https://github.com/soumilk/Python-GUI/tree/master/Tkinter%20basics).
+
+To learn mode about Tkinter visit [this link](https://www.datacamp.com/community/tutorials/gui-tkinter-python).<br>           Official Docs for tkinter in python3.6 is [here](https://docs.python.org/3.6/library/tkinter.html). 
+
+Here are the projects which are implemented using the graphic libraries [Projects and implementations](https://github.com/soumilk/Python-GUI/tree/master/Projects).  
