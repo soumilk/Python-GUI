@@ -1,60 +1,51 @@
 from tkinter import *
 
-class App(Tk):
-    def __init__(self):
-        Tk.__init__(self)
+root = Tk()
+rootTitle = "Body Mass Index"
+root.resizable(False, False) #To make it non resizable
+root.configure(background='black')
 
-        self.head = Label(self, text="Body Mass Index (BMI)")
-        self.head.grid(row=0, columnspan=2)
-
-        self.inputH = Label(self, text="Height: (Centimeter)")
-        self.inputH.grid(row=1, column=0)
-
-        self.inputW = Label(self, text="Weight: (Kilogram)")
-        self.inputW.grid(row=2, column=0)
-
-        self.inputW = Entry(self)
-        self.inputW.grid(row=2, column=1)
-
-        self.inputH = Entry(self)
-        self.inputH.grid(row=1, column=1)
-
-        self.button = Button(self, text="Calculate", command=self.calc)
-        self.button.grid(row=4, columnspan=2)
-
-        self.bmiCal = Label(self, text="BMI:")
-        self.bmiCal.grid(row=5, column=0)
-
-        self.cate = Label(self, text="Catagory:")
-        self.cate.grid(row=6, column=0)
-
-        self.result = Label(self, bg="#fff", anchor="w", relief="groove")
-        self.result.grid(row=5, column=1)
-
-        self.cateName = Label(self, bg="#fff", anchor="w", relief="groove")
-        self.cateName.grid(row=6, column=1)
-
-    def calc(self):
-        self.height = float(self.inputH.get())
-        self.weight = float(self.inputW.get())
-        self.bmi = (self.weight / (self.height ** 2)) * 703
-        self.bmi = round(self.bmi, 2)
-        self.result["text"] = self.bmi
-        if self.bmi > 18.5:
-            if self.bmi > 24.9:
-                if self.bmi > 25:
-                    if self.bmi > 30:
-                        self.cateName["text"] = "Obese"
-                else:
-                    self.cateName["text"] = "Overweight"
+def cal(): #function calcalate BMI
+    height = float(inputH.get())
+    weight = float(inputW.get())
+    bmi = weight / ((height / 100) ** 2)
+    outResult["text"] = "%.3f" % bmi
+    if bmi > 18.5:
+        if bmi > 24.9:
+            if bmi > 25:
+                if bmi > 30:
+                    outCate["text"] = "Obese"
             else:
-                self.cateName["text"] = "Normal"
+                outCate["text"] = "Overweight"
         else:
-            self.cateName["text"] = "Underweight"
+            outCate["text"] = "Normal"
+    else:
+        outCate["text"] = "Underweight"
+#Header
+head = Label(root, text="Body Mass Index", font=("Verdana", 25, "bold"), fg="yellow", bg="black")
+head.grid(row=0, columnspan=2, ipady=15)
+#Input height and weight
+inputH = Label(root, text="Height: (Cm.)", font=("Verdana", 20), fg="yellow", bg="black")
+inputH.grid(row=1)
+inputW = Label(root, text="Weight: (Kg.)", font=("Verdana", 20), fg="yellow", bg="black")
+inputW.grid(row=2, ipady=10)
 
-def main():
-    a = App()
-    a.mainloop()
+inputH = Entry(root, font=("Verdana", 20))
+inputH.grid(row=1, column=1)
+inputW = Entry(root, font=("Verdana", 20))
+inputW.grid(row=2, column=1)
+#Button for calculate
+calca = Button(root, text="Calculate", command=cal, font=("Verdana", 20), bg="orange")
+calca.grid(row=3, columnspan=2)
+#BMI and catagory result
+result = Label(root, text="BMI:", font=("Verdana", 20), fg="yellow", bg="black")
+result.grid(row=4, ipady=10)
+cate = Label(root, text="Category:", font=("Verdana", 20), fg="yellow", bg="black")
+cate.grid(row=5)
 
-if __name__ == "__main__":
-    main()
+outResult = Label(root, bg="#fff", anchor="w", relief="groove", font=("Verdana", 20))
+outResult.grid(row=4, column=1)
+outCate = Label(root, bg="#fff", anchor="w", relief="groove", font=("Verdana", 20))
+outCate.grid(row=5, column=1)
+
+root.mainloop()
