@@ -1,7 +1,7 @@
 ## Projects:
 
 1. A simple notepad in Python, using Tkinter. The notepad GUI consists of various menu items, such as file and edit. Its functionality includes cut and pasting, saving files, opening files and editing files.
-2. A simple calculator in Python, using Tkinter. The calculator can perform basic arithmatic operations, such as addition, subtraction, multiplication and division.
+2. A simple calculator in Python, using Tkinter. The calculator allows you to press and erase buttons, that correspond to numbers. 
 3. 
 4.
 5.
