@@ -2,9 +2,9 @@
 
 1. A simple notepad in Python, using Tkinter. The notepad GUI consists of various menu items, such as file and edit. Its functionality includes cut and pasting, saving files, opening files and editing files.
 2. A simple calculator in Python, using Tkinter. The calculator allows you to press and erase buttons, that correspond to numbers. 
-3. 
-4.
-5.
+3. This table game is designed for children to learn multiplication tables. For example, pressing 5 would bring up multiples of 5.
+4. This bounce game allows you to use a paddle to keep a ball bouncing and in the air. If the ball falls beneath the paddle, the player loses!
+5. 
 6. Body mass index Calculator
 is a program for calculate a body mass index (BMI). You can open and input your height (Cm.) and weight (Kg.) then press calculated button. Program will calculate your BMI and find your body type. 
 7. Convert meter to other
