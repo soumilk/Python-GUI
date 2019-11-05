@@ -18,5 +18,6 @@ Visit this link to learn all the basic required elements of Tkinter library to m
 <br>Here are the projects which are implemented using the graphic libraries [Projects and implementations](https://github.com/soumilk/Python-GUI/tree/master/Projects).
 
 ### PyQt - PyQt is a Python binding of the cross-platform GUI toolkit Qt, implemented as a Python plug-in.
-  Learning Resources : https://www.tutorialspoint.com/pyqt/index.html 
-                       https://www.guru99.com/pyqt-tutorial.html 
+<strong> Learning Resources :</strong><br>
+https://www.tutorialspoint.com/pyqt/index.html <br>
+https://www.guru99.com/pyqt-tutorial.html 
